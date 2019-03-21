@@ -1,11 +1,11 @@
 /**
 *
+*Class purpose:
+*Help MSU Denver track their students and their grades in various courses 
+*
 *@version 2.0
 *@author Daniel L'Episcopo
-*
-*Class purpose:
-*Help MSU Denver track their students and their grades in various courses  
-*
+* 
 *Class/Computer Info:
 *Programming Project #1, CS 2050, Section 2
 *jGRASP 2.04.4_0, Macbook Pro 2015 OS X
@@ -21,6 +21,8 @@
 *- Martin Luther King Jr (1929 - 1968)
 *
 */
+
+import java.io.IOException; // Access the IOException class
 
 public class Student {
 
@@ -39,7 +41,7 @@ public class Student {
   
   public Student() {
   
-      studentId    = "";  // A unique student ID for the studen
+      studentId    = "";  // A unique student ID for the student
       firstName    = "";  // First name of the student
       lastName     = "";  // Last name of the student
       emailAddress = "";  // Email address of the student
@@ -58,15 +60,37 @@ public class Student {
    * @throws IllegalArgumentException  Check email is null, blank, or missing "@"
    */
    
-   public Student(String student, String first, String last, String email) {
+   public Student(String student, String first, String last, String email) throws IllegalArgumentException {
       
-      if (student.isEmpty() || first.isEmpty() ||
-          last.isEmpty() || email.isEmpty())
-         throw new IllegalArgumentException("One or more fields are blank.");
+      try {
       
-      if (email.equals(null) || email.equals("") || !(email.contains("@")))
-         throw new IllegalArgumentException(
-         "Email address is blank, null, or missing the @ symbol.");
+	      if (student.isEmpty() || first.isEmpty() ||
+	          last.isEmpty() || email.isEmpty()) {
+	    	  
+	    	  throw new IllegalArgumentException("One or more fields are blank.");
+           
+         } // End if
+	     
+	      } catch(IllegalArgumentException e) {
+         
+	    	  	System.err.println(e.getMessage());
+            
+	      } // End catch
+	    	
+	   try {
+         
+	      if (email.equals(null) || email.equals("") || !(email.contains("@"))) {
+         
+	         throw new IllegalArgumentException(
+	            "Email address is blank, null, or missing the @ symbol.");
+            
+            } // End if
+            
+	        } catch(IllegalArgumentException e) {
+         
+	    	  System.out.println(e.getMessage());
+           
+	      } // End catch
       
       this.studentId = student;
       this.firstName = first;
@@ -143,7 +167,7 @@ public class Student {
    
    /**
    * Tests all instance variables if they equal to other object
-   * @param Student other  The other student that's being comapred
+   * @param Student other  The other student that's being compared
    * @return  If all instance variables are equal
    */
    
@@ -151,8 +175,11 @@ public class Student {
       
       boolean result = false; // Set if any variables aren't equal
       
-      if(other == null)
+      if(other == null) {
+      
          throw new NullPointerException("Cannot compare with null.");
+         
+         } // End if
       
       if (studentId.equals(other.studentId) &&
           firstName.equals(other.firstName) &&
