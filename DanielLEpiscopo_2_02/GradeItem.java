@@ -1,10 +1,10 @@
 /**
 *
-*@version 2.0
-*@author Daniel L'Episcopo
-*
 *Class purpose:
-*Help MSU Denver track their students and their grades in various courses  
+*Help MSU Denver track their students and their grades in various courses 
+*
+*@version 2.0
+*@author Daniel L'Episcopo 
 *
 *Class/Computer Info:
 *Programming Project #1, CS 2050, Section 2
@@ -27,7 +27,7 @@ import java.io.IOException; // Access the IOException class
 public class GradeItem {
    
    private int gradeId;       // A unique value for the grade item
-   private int maxScore;      // The max score a student can recieve
+   private int maxScore;      // The max score a student can receive
    private int actScore;      // Current score of a student's work 
    
    private String studentId;  // A unique student ID for the student 
@@ -67,7 +67,7 @@ public class GradeItem {
    * @param course   A student's course ID
    * @param item     A student's item type
    * @param date     A student's date
-   * @param mScore   The max score a student could recieve
+   * @param mScore   The max score a student could receive
    * @param aScore   The student's actual score 
    * @throws IllegalArgumentException  One or more fields are blank
    * @throws IllegalArgumentException  Maximum score is NOT greater than 0
@@ -80,11 +80,13 @@ public class GradeItem {
       try {
       
 	      if (!(grade > 0) || student.isEmpty() || course.isEmpty() || 
-	          item.isEmpty() || date.isEmpty());
+	          item.isEmpty() || date.isEmpty()) {
              
 	          throw new IllegalArgumentException("One or more GI fields are blank.");
              
-		  } catch(IllegalArgumentException e) {
+              } // End if
+             
+		     } catch(IllegalArgumentException e) {
         
 			  System.out.println(e.getMessage());
            
@@ -92,11 +94,13 @@ public class GradeItem {
 		  
 		try {
       
-	      if (!(mScore > 0));
+	      if (!(mScore > 0)) {
          
 	         throw new IllegalArgumentException(mScore + " is not greater than 0.");
             
-		  } catch(IllegalArgumentException e) {
+            } // End if
+            
+		     } catch(IllegalArgumentException e) {
         
 			  System.out.println(e.getMessage());
            
@@ -104,12 +108,14 @@ public class GradeItem {
 		  
 		try {	
         	  
-	      if (!(aScore > 0) && !(aScore < mScore));
+	      if (!(aScore > 0) && !(aScore < mScore)) {
          
 	         throw new IllegalArgumentException(
 	         aScore + " is not greater than 0 or it isn't greater than max score.");
             
-		  } catch(IllegalArgumentException e) {
+            } // End if
+             
+		     } catch(IllegalArgumentException e) {
         
 			  System.out.println(e.getMessage());
            
@@ -232,15 +238,18 @@ public class GradeItem {
    
    /**
    * Tests all instance variables if they equal to other object
-   * @param GradeItem other  The other student that's being comapred
+   * @param GradeItem other  The other student that's being compared
    * @return  If all instance variables are equal
    */
    public boolean equals(GradeItem other) {
    
       boolean result = false; // Set if any variables aren't equal
    
-      if(other == null)
+      if(other == null) {
+      
          throw new NullPointerException("Cannot compare with null.");
+         
+         } // End if
    
       if(gradeId == (other.gradeId) 
       && studentId.equals(other.studentId) 
@@ -269,7 +278,7 @@ public class GradeItem {
    * @return courseId   A student's course ID
    * @return itemType   A student's item type
    * @return date       A student's date
-   * @return maxScore   The max score a student could recieve
+   * @return maxScore   The max score a student could receive
    * @return actScore   The student's actual score 
    */
    

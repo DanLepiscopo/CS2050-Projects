@@ -1,10 +1,10 @@
 /**
 *
-*@version 2.0
-*@author Daniel L'Episcopo
-*
 *Class purpose:
-*Help MSU Denver track their students and their grades in various courses  
+*Help MSU Denver track their students and their grades in various courses
+*
+*@version 2.0
+*@author Daniel L'Episcopo  
 *
 *Class/Computer Info:
 *Programming Project #2, CS 2050, Section 2
