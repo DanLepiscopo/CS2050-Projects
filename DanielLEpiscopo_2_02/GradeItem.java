@@ -82,7 +82,7 @@ public class GradeItem {
 	      if (!(grade > 0) || student.isEmpty() || course.isEmpty() || 
 	          item.isEmpty() || date.isEmpty()) {
              
-	          throw new IllegalArgumentException("One or more GI fields are blank.");
+	          throw new IllegalArgumentException("One or more Grade Item fields are blank.");
              
               } // End if
              
@@ -111,7 +111,8 @@ public class GradeItem {
 	      if (!(aScore > 0) && !(aScore < mScore)) {
          
 	         throw new IllegalArgumentException(
-	         aScore + " is not greater than 0 or it isn't greater than max score.");
+	         "Actual Score " + aScore + " is not greater than 0 or it isn't" + 
+             "greater than max score.");
             
             } // End if
              
@@ -251,11 +252,9 @@ public class GradeItem {
          
          } // End if
    
-      if(gradeId == (other.gradeId) 
-      && studentId.equals(other.studentId) 
-      && courseId.equals(other.courseId) 
-      && itemType.equals(other.itemType) 
-      && date.equals(other.date)) {
+      if(gradeId == (other.gradeId) && studentId.equals(other.studentId) 
+         && courseId.equals(other.courseId) && itemType.equals(other.itemType) 
+         && date.equals(other.date)) {
       
          result = true;
       } // End if
