@@ -255,6 +255,8 @@ public class DanielLEpiscopo_03 {
         Object[] student   = listOfStudents.toArray();
         Object[] gradeItem = listOfGradeItems.toArray();
         
+        System.out.println("Generating Report ... Done");
+        
         for (int i = 1; i < listOfStudents.getCurrentSize(); i++) {
             
             int sumMaxScore  = 0; // Sum amount of max score points

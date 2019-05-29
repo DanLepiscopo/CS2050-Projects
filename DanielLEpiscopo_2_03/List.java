@@ -71,7 +71,8 @@ public class List<T> implements MyCollectionInterface<T> {
             } // End if
          else { 
          
-            System.out.println("Cannot add, list is at capacity.");
+            throw new IllegalArgumentException(
+            "Cannot add, list is at capacity.");
          
          } // End else   
          

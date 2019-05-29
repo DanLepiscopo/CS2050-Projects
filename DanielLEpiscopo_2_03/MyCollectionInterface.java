@@ -14,6 +14,17 @@ public interface MyCollectionInterface<T> {
     * @return True if the addition is successful, or false if not.
     */
    public boolean add(T newItem);
+   
+   //************************************************************************
+   
+   /**
+     * Adds a new entry to this collection at the given position
+     * 
+     * @param newItem The object to be added to the collection
+     * @param position The location where newItem will be inserted.
+     * @return True if the addition is successful, or false if not.
+     */
+    public boolean add(T newItem, int position);
 
    //************************************************************************
 
