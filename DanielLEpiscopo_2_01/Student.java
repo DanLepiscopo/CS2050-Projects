@@ -37,7 +37,7 @@ public class Student {
   
   // ***************************************************************
   
-  /** Default constructor -  default values for the objects */
+  /** Default constructor - default values for the objects */
   
   public Student() {
   
@@ -60,14 +60,15 @@ public class Student {
    * @throws IllegalArgumentException  Check email is null, blank, or missing "@"
    */
    
-   public Student(String student, String first, String last, String email) throws IllegalArgumentException {
+   public Student(String student, String first, String last, 
+                  String email) throws IllegalArgumentException {
       
       try {
       
 	      if (student.isEmpty() || first.isEmpty() ||
 	          last.isEmpty() || email.isEmpty()) {
 	    	  
-	    	  throw new IllegalArgumentException("One or more fields are blank.");
+	    	  throw new IllegalArgumentException("One or more student fields are blank.");
            
          } // End if
 	     
@@ -82,7 +83,7 @@ public class Student {
 	      if (email.equals(null) || email.equals("") || !(email.contains("@"))) {
          
 	         throw new IllegalArgumentException(
-	            "Email address is blank, null, or missing the @ symbol.");
+	            emailAddress + " is blank, null, or missing the @ symbol.");
             
             } // End if
             
